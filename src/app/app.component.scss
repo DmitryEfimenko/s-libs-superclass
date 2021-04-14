@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+pre {
+  margin: 0;
+  background: rgb(238, 235, 235);
+  color: rgb(88, 9, 9);
+  white-space: normal;
+  padding: 4px 8px;
+}
+
+code {
+  background: rgb(238, 235, 235);
+  color: red;
+  padding: 0 2px;
+}

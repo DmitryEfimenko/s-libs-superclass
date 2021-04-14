@@ -1,0 +1,20 @@
+<input
+  class="form-control"
+  [attr.name]="name"
+  [formControl]="formControl"
+  [matAutocomplete]="auto"
+  autocomplete="{{autocomplete}}"
+/>
+
+<mat-autocomplete
+  #auto="matAutocomplete"
+  [autoActiveFirstOption]="autoActivateFirstOption"
+>
+  <mat-option
+    *ngFor="let option of filteredOptions$ | async"
+    [value]="option.label"
+    [class.font-weight-bold]="option.preferred"
+  >
+    {{option.label}}
+  </mat-option>
+</mat-autocomplete>

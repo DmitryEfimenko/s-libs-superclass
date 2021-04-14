@@ -1,0 +1,18 @@
+<h1>Simple Autocomplete</h1>
+
+<div class="grid">
+  <app-simple-autocomplete
+    [formControl]="control"
+    [options]="options"
+    name="asd"
+  >
+  </app-simple-autocomplete>
+  
+  <pre>
+    <div>value: {{control.value}}</div>
+    <div>touched: {{control.touched}}</div>
+    <div>dirty: {{control.dirty}}</div>
+    <div>pending: {{control.pending}}</div>
+    <div>valid: {{control.valid}}</div>
+  </pre>
+</div>
