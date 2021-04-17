@@ -77,12 +77,10 @@ export class SimpleAutocompleteComponent extends WrappedFormControlSuperclass<Ou
     return outgoingValues$.pipe(
       concatLatestFrom(() => this.options$),
       switchMap(([value, options]) => {
-        if (this.allowNonOptionValue) {
-          return of(value);
-        } else {
-          const matchingOptionValue = options.find(x => x.label === value)?.value;
-          return of(matchingOptionValue).pipe(filter(x => x !== undefined));
-        }
+        const matchingOptionValue = options.find(x => x.label === value)?.value;
+        return this.allowNonOptionValue
+          ? of(matchingOptionValue ?? value)
+          : of(matchingOptionValue).pipe(filter(x => x !== undefined));
       })
     );
   }
